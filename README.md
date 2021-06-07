@@ -1,18 +1,16 @@
-# Project Name
+# 100 Days of Code Bot
 
-Project Description
+A Discord bot to help track your progress in the 100 Days of Code challenge.
 
-![](https://img.shields.io/codeclimate/maintainability/nhcarrigan/new-repo-template)
-![](https://img.shields.io/codeclimate/issues/nhcarrigan/new-repo-template)
-![](https://img.shields.io/codeclimate/tech-debt/nhcarrigan/new-repo-template)
-![](https://img.shields.io/lgtm/alerts/github/nhcarrigan/new-repo-template)
-![](https://img.shields.io/lgtm/grade/javascript/github/nhcarrigan/new-repo-template)
+![](https://img.shields.io/codeclimate/maintainability/nhcarrigan/100-days-of-code-bot)
+![](https://img.shields.io/codeclimate/issues/nhcarrigan/100-days-of-code-bot)
+![](https://img.shields.io/codeclimate/tech-debt/nhcarrigan/100-days-of-code-bot)
+![](https://img.shields.io/lgtm/alerts/github/nhcarrigan/100-days-of-code-bot)
+![](https://img.shields.io/lgtm/grade/javascript/github/nhcarrigan/100-days-of-code-bot)
 
 ## Live Version
 
-This page is not yet deployed.
-
-<!--This page is currently deployed. [View the live website.]()-->
+This bot was built for the [freeCodeCamp Discord server](https://www.freecodecamp.org/news/freecodecamp-discord-chat-room-server/).
 
 ## Feedback and Bugs
 
