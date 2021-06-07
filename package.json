@@ -21,6 +21,7 @@
     "npm": "7.13.0"
   },
   "devDependencies": {
+    "@types/node": "^15.12.1",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "eslint": "^7.28.0",
@@ -31,6 +32,14 @@
     "prettier": "^2.3.1"
   },
   "lint-staged": {
-    "*.ts": ["eslint --fix", "prettier --write"]
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@sentry/integrations": "^6.5.1",
+    "@sentry/node": "^6.5.1",
+    "winston": "^3.3.3"
   }
 }
