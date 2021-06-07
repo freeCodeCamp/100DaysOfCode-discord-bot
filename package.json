@@ -4,6 +4,10 @@
   "description": "A bot for tracking 100 Days of Code progress in Discord.",
   "main": "./prod/index.js",
   "scripts": {
+    "prebuild": "rm -rf ./prod",
+    "build": "tsc",
+    "lint": "eslint ./src",
+    "start": "node -r dotenv/config ./prod/index.js",
     "test": "echo 'No tests yet'."
   },
   "repository": {
@@ -40,6 +44,9 @@
   "dependencies": {
     "@sentry/integrations": "^6.5.1",
     "@sentry/node": "^6.5.1",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "mongoose": "^5.12.13",
     "winston": "^3.3.3"
   }
 }
