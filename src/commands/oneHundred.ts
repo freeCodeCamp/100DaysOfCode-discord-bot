@@ -32,7 +32,7 @@ export const oneHundred: CommandInt = {
 
       const oneHundredEmbed = new MessageEmbed();
       oneHundredEmbed.setTitle("100 Days of Code");
-      oneHundredEmbed.setDescription(text.join(" "));
+      oneHundredEmbed.setDescription(text.join(" ").replace(/\\n/g, "\n"));
       oneHundredEmbed.setAuthor(
         author.username + "#" + author.discriminator,
         author.displayAvatarURL()

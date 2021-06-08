@@ -26,7 +26,7 @@ export const edit: CommandInt = {
         return;
       }
 
-      targetEmbed.setDescription(text.join(" "));
+      targetEmbed.setDescription(text.join(" ").replace(/\\n/g, "\n"));
 
       await targetMessage.edit(targetEmbed);
 
