@@ -1,0 +1,52 @@
+{
+  "name": "100-days-of-code-bot",
+  "version": "0.0.0",
+  "description": "A bot for tracking 100 Days of Code progress in Discord.",
+  "main": "./prod/index.js",
+  "scripts": {
+    "prebuild": "rm -rf ./prod",
+    "build": "tsc",
+    "lint": "eslint ./src",
+    "start": "node -r dotenv/config ./prod/index.js",
+    "test": "echo 'No tests yet'."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhcarrigan/100-days-of-code-bot.git"
+  },
+  "author": "Nicholas Carrigan",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/nhcarrigan/100-days-of-code-bot/issues"
+  },
+  "homepage": "https://github.com/nhcarrigan/100-days-of-code-bot#readme",
+  "engines": {
+    "node": "16.2.0",
+    "npm": "7.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.1",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@sentry/integrations": "^6.5.1",
+    "@sentry/node": "^6.5.1",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "mongoose": "^5.12.13",
+    "winston": "^3.3.3"
+  }
+}
