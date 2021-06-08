@@ -32,8 +32,11 @@ export const oneHundred: CommandInt = {
 
       const oneHundredEmbed = new MessageEmbed();
       oneHundredEmbed.setTitle("100 Days of Code");
-      oneHundredEmbed.setDescription(text.join(" "));
-      oneHundredEmbed.setAuthor(author.username, author.displayAvatarURL());
+      oneHundredEmbed.setDescription(text.join(" ").replace(/\\n/g, "\n"));
+      oneHundredEmbed.setAuthor(
+        author.username + "#" + author.discriminator,
+        author.displayAvatarURL()
+      );
       oneHundredEmbed.addField("Round", updatedCamper.round, true);
       oneHundredEmbed.addField("Day", updatedCamper.day, true);
       oneHundredEmbed.setFooter(
