@@ -23,7 +23,7 @@ import { onMessage } from "./events/onMessage";
 
   BOT.on("ready", async () => await onReady());
 
-  BOT.on("message", async (message) => await onMessage(message));
+  BOT.on("message", async (message) => await onMessage(message, BOT));
 
   await connectDatabase();
 
