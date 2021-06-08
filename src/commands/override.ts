@@ -63,7 +63,7 @@ export const override: CommandInt = {
 
       const overrideEmbed = new MessageEmbed();
       overrideEmbed.setAuthor(
-        targetCamperDiscord.username,
+        targetCamperDiscord.username + "#" + targetCamperDiscord.discriminator,
         targetCamperDiscord.displayAvatarURL()
       );
       overrideEmbed.setTitle("Updated 100 Days of Code data.");

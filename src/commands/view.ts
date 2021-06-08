@@ -35,7 +35,10 @@ export const view: CommandInt = {
       );
       camperEmbed.addField("Round", targetCamper.round, true);
       camperEmbed.addField("Day", targetCamper.day, true);
-      camperEmbed.setAuthor(author.username, author.displayAvatarURL());
+      camperEmbed.setAuthor(
+        author.username + "#" + author.discriminator,
+        author.displayAvatarURL()
+      );
 
       await channel.send(camperEmbed);
       await message.delete();
