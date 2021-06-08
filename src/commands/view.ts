@@ -37,10 +37,8 @@ export const view: CommandInt = {
       camperEmbed.addField("Day", targetCamper.day, true);
       camperEmbed.setAuthor(author.username, author.displayAvatarURL());
 
-      const update = await channel.send(camperEmbed);
+      await channel.send(camperEmbed);
       await message.delete();
-
-      setTimeout(async () => await update.delete(), 10000);
     } catch (err) {
       errorHandler("view command", err);
     }
