@@ -8,7 +8,8 @@
     "build": "tsc",
     "lint": "eslint ./src",
     "start": "node -r dotenv/config ./prod/index.js",
-    "test": "echo 'No tests yet'."
+    "test": "echo 'No tests yet'.",
+    "docs": "docsify serve ./docs -o --port 3200"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "@sentry/integrations": "^6.5.1",
     "@sentry/node": "^6.5.1",
     "discord.js": "^12.5.3",
+    "docsify-cli": "^4.4.3",
     "dotenv": "^10.0.0",
     "mongoose": "^5.12.13",
     "winston": "^3.3.3"

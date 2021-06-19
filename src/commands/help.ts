@@ -13,7 +13,7 @@ export const help: CommandInt = {
       const helpEmbed = new MessageEmbed();
       helpEmbed.setTitle("Available Commands!");
       helpEmbed.setDescription(
-        "These are the available commands for this bot. You can view [the source code](https://github.com/nhcarrigan/100-days-of-code-bot) for more information."
+        "These are the available commands for this bot. You can view [the source code](https://github.com/nhcarrigan/100-days-of-code-bot) or read the [documentation site](https://www.nhcarrigan.com/100-days-of-code-bot) for more information."
       );
       helpEmbed.addField(
         "Commands:",

@@ -8,11 +8,16 @@ export const edit: CommandInt = {
     try {
       const { author, channel, content } = message;
 
-      const [, target, ...text] = content.split(" ");
-
-      const targetId = target.split("/").reverse()[0];
+      const [, targetId, ...text] = content.split(" ");
 
       const targetMessage = await channel.messages.fetch(targetId);
+
+      if (!targetMessage) {
+        await channel.send(
+          "That does not appear to be a valid message ID. Be sure that the message is in the same channel you are using this command."
+        );
+        return;
+      }
 
       const targetEmbed = targetMessage.embeds[0];
 
