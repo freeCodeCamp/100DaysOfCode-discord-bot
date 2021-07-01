@@ -21,6 +21,7 @@ export const help: CommandInt = {
           .map((el) => `\`!${el.name}\`: ${el.desc}`)
           .join("\n")
       );
+      helpEmbed.setFooter(`Version ${process.env.npm_package_version}`);
       await channel.send(helpEmbed);
       return;
     } catch (err) {
