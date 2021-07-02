@@ -13,7 +13,7 @@ export const help: CommandInt = {
       const helpEmbed = new MessageEmbed();
       helpEmbed.setTitle("Available Commands!");
       helpEmbed.setDescription(
-        "These are the available commands for this bot. You can view [the source code](https://github.com/freeCodeCamp/100-days-of-code-bot) for more information."
+        "These are the available commands for this bot. You can view [the source code](https://github.com/freeCodeCamp/100-days-of-code-bot) or read the [documentation](https://opensource.freecodecamp.org/100DaysOfCode-discord-bot/#/) for more information."
       );
       helpEmbed.addField(
         "Commands:",
@@ -21,6 +21,7 @@ export const help: CommandInt = {
           .map((el) => `\`!${el.name}\`: ${el.desc}`)
           .join("\n")
       );
+      helpEmbed.setFooter(`Version ${process.env.npm_package_version}`);
       await channel.send(helpEmbed);
       return;
     } catch (err) {
