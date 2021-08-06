@@ -24,7 +24,7 @@ import { IntentOptions } from "./config/IntentOptions";
 
   BOT.on("ready", async () => await onReady());
 
-  BOT.on("message", async (message) => await onMessage(message, BOT));
+  BOT.on("messageCreate", async (message) => await onMessage(message, BOT));
 
   await connectDatabase();
 
