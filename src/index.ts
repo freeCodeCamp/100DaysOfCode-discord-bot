@@ -5,6 +5,7 @@ import { Client } from "discord.js";
 import { connectDatabase } from "./database/connectDatabase";
 import { onReady } from "./events/onReady";
 import { onMessage } from "./events/onMessage";
+import { IntentOptions } from "./config/IntentOptions";
 
 (async () => {
   validateEnv();
@@ -19,7 +20,7 @@ import { onMessage } from "./events/onMessage";
     ],
   });
 
-  const BOT = new Client();
+  const BOT = new Client({ intents: IntentOptions });
 
   BOT.on("ready", async () => await onReady());
 

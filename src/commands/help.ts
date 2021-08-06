@@ -22,7 +22,7 @@ export const help: CommandInt = {
           .join("\n")
       );
       helpEmbed.setFooter(`Version ${process.env.npm_package_version}`);
-      await channel.send(helpEmbed);
+      await channel.send({ embeds: [helpEmbed] });
       return;
     } catch (err) {
       errorHandler("help command", err);

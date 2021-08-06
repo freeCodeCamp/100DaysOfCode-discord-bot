@@ -68,14 +68,14 @@ export const override: CommandInt = {
       );
       overrideEmbed.setTitle("Updated 100 Days of Code data.");
       overrideEmbed.setDescription(`Data manually set by <@!${author.id}>.`);
-      overrideEmbed.addField("Round", overriddenCamper.round);
-      overrideEmbed.addField("Day", overriddenCamper.day);
+      overrideEmbed.addField("Round", overriddenCamper.round.toString());
+      overrideEmbed.addField("Day", overriddenCamper.day.toString());
       overrideEmbed.setFooter(
         "Manually updated on: " +
           new Date(overriddenCamper.timestamp).toLocaleDateString()
       );
 
-      await channel.send(overrideEmbed);
+      await channel.send({ embeds: [overrideEmbed] });
       await message.delete();
     } catch (err) {
       errorHandler("override command", err);
