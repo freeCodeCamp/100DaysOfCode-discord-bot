@@ -1,6 +1,6 @@
 {
   "name": "100-days-of-code-bot",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A bot for tracking 100 Days of Code progress in Discord.",
   "main": "./prod/index.js",
   "scripts": {
