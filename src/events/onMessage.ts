@@ -17,7 +17,7 @@ export const onMessage = async (
       return;
     }
 
-    if (message.channel.type === "dm") {
+    if (message.channel.type === "DM") {
       await message.channel.send(
         "Commands are not supported in DMs. Please use the 100 Days of Code channel."
       );

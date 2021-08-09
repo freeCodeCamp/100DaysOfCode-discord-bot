@@ -33,7 +33,7 @@ export const edit: CommandInt = {
 
       targetEmbed.setDescription(text.join(" ").replace(/\\n/g, "\n"));
 
-      await targetMessage.edit(targetEmbed);
+      await targetMessage.edit({ embeds: [targetEmbed] });
 
       await message.delete();
     } catch (err) {

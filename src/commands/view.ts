@@ -33,14 +33,14 @@ export const view: CommandInt = {
           targetCamper.timestamp
         ).toLocaleDateString()}.`
       );
-      camperEmbed.addField("Round", targetCamper.round, true);
-      camperEmbed.addField("Day", targetCamper.day, true);
+      camperEmbed.addField("Round", targetCamper.round.toString(), true);
+      camperEmbed.addField("Day", targetCamper.day.toString(), true);
       camperEmbed.setAuthor(
         author.username + "#" + author.discriminator,
         author.displayAvatarURL()
       );
 
-      await channel.send(camperEmbed);
+      await channel.send({ embeds: [camperEmbed] });
       await message.delete();
     } catch (err) {
       errorHandler("view command", err);

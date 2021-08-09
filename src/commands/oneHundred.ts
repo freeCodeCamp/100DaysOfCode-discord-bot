@@ -37,14 +37,14 @@ export const oneHundred: CommandInt = {
         author.username + "#" + author.discriminator,
         author.displayAvatarURL()
       );
-      oneHundredEmbed.addField("Round", updatedCamper.round, true);
-      oneHundredEmbed.addField("Day", updatedCamper.day, true);
+      oneHundredEmbed.addField("Round", updatedCamper.round.toString(), true);
+      oneHundredEmbed.addField("Day", updatedCamper.day.toString(), true);
       oneHundredEmbed.setFooter(
         "Day completed: " +
           new Date(updatedCamper.timestamp).toLocaleDateString()
       );
 
-      await channel.send(oneHundredEmbed);
+      await channel.send({ embeds: [oneHundredEmbed] });
       await message.delete();
     } catch (err) {
       errorHandler("100 command", err);

@@ -1,6 +1,6 @@
 {
   "name": "100-days-of-code-bot",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A bot for tracking 100 Days of Code progress in Discord.",
   "main": "./prod/index.js",
   "scripts": {
@@ -45,7 +45,7 @@
   "dependencies": {
     "@sentry/integrations": "6.11.0",
     "@sentry/node": "6.11.0",
-    "discord.js": "12.5.3",
+    "discord.js": "13.0.0",
     "docsify-cli": "4.4.3",
     "dotenv": "10.0.0",
     "mongoose": "5.13.5",
