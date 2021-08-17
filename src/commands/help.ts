@@ -1,28 +1,34 @@
+import { SlashCommandBuilder } from "@discordjs/builders";
 import { MessageEmbed } from "discord.js";
 import { CommandInt } from "../interfaces/CommandInt";
 import { errorHandler } from "../utils/errorHandler";
-import { CommandList } from "./_CommandList";
 
 export const help: CommandInt = {
-  name: "help",
-  desc: "Returns information on the bot's available commands.",
-  run: async (message) => {
+  data: new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Provides information on using this bot."),
+  run: async (interaction) => {
     try {
-      const { channel } = message;
-
+      await interaction.deferReply();
       const helpEmbed = new MessageEmbed();
-      helpEmbed.setTitle("Available Commands!");
+      helpEmbed.setTitle("100 Days of Code Bot!");
       helpEmbed.setDescription(
-        "These are the available commands for this bot. You can view [the source code](https://github.com/freeCodeCamp/100-days-of-code-bot) or read the [documentation](https://opensource.freecodecamp.org/100DaysOfCode-discord-bot/#/) for more information."
+        "This discord bot is designed to help you track and share your 100 Days of Code progress."
       );
       helpEmbed.addField(
-        "Commands:",
-        CommandList.filter((el) => el && !el.hidden)
-          .map((el) => `\`!${el.name}\`: ${el.desc}`)
-          .join("\n")
+        "Create today's update",
+        "Use the `/100` command to create your update for today. The `message` will be displayed in your embed."
+      );
+      helpEmbed.addField(
+        "Edit today's update",
+        "Do you see a typo in your embed? Right click it and copy the ID (you may need developer mode on for this), and use the `/edit` command to update that embed with a new message."
+      );
+      helpEmbed.addField(
+        "Show your progress",
+        "To see your current progress in the challenge, and the day you last checked in, use `/view`."
       );
       helpEmbed.setFooter(`Version ${process.env.npm_package_version}`);
-      await channel.send({ embeds: [helpEmbed] });
+      await interaction.editReply({ embeds: [helpEmbed] });
       return;
     } catch (err) {
       errorHandler("help command", err);
