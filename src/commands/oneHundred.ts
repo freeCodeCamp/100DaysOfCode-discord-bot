@@ -1,41 +1,58 @@
-import { Message, MessageEmbed } from "discord.js";
+import { SlashCommandBuilder } from "@discordjs/builders";
+import { MessageEmbed } from "discord.js";
 import { CommandInt } from "../interfaces/CommandInt";
 import { getCamperData } from "../modules/getCamperData";
 import { updateCamperData } from "../modules/updateCamperData";
 import { errorHandler } from "../utils/errorHandler";
 
 export const oneHundred: CommandInt = {
-  name: "100",
-  desc: "Generates a 100 days of code update.",
-  run: async (message: Message) => {
+  data: new SlashCommandBuilder()
+    .setName("100")
+    .setDescription("Check in for the 100 Days of Code challenge.")
+    .addStringOption((option) =>
+      option
+        .setName("message")
+        .setDescription("The message to go in your 100 Days of Code update.")
+        .setRequired(true)
+    ) as SlashCommandBuilder,
+  run: async (interaction) => {
     try {
-      const { author, channel, content } = message;
-      const [, ...text] = content.split(" ");
+      await interaction.deferReply();
+      const { user } = interaction;
+      const text = interaction.options.getString("message");
 
-      const targetCamper = await getCamperData(author.id);
+      if (!text) {
+        await interaction.editReply({
+          content: "The message argument is required.",
+        });
+        return;
+      }
+      const targetCamper = await getCamperData(user.id);
 
       if (!targetCamper) {
-        await channel.send(
-          "There is an error with the database lookup. Please try again later."
-        );
+        await interaction.editReply({
+          content:
+            "There is an error with the database lookup. Please try again later.",
+        });
         return;
       }
 
       const updatedCamper = await updateCamperData(targetCamper);
 
       if (!updatedCamper) {
-        await channel.send(
-          "There is an error with the database update. Please try again later."
-        );
+        await interaction.editReply({
+          content:
+            "There is an error with the database update. Please try again later.",
+        });
         return;
       }
 
       const oneHundredEmbed = new MessageEmbed();
       oneHundredEmbed.setTitle("100 Days of Code");
-      oneHundredEmbed.setDescription(text.join(" ").replace(/\\n/g, "\n"));
+      oneHundredEmbed.setDescription(text);
       oneHundredEmbed.setAuthor(
-        author.username + "#" + author.discriminator,
-        author.displayAvatarURL()
+        user.username + "#" + user.discriminator,
+        user.displayAvatarURL()
       );
       oneHundredEmbed.addField("Round", updatedCamper.round.toString(), true);
       oneHundredEmbed.addField("Day", updatedCamper.day.toString(), true);
@@ -44,8 +61,7 @@ export const oneHundred: CommandInt = {
           new Date(updatedCamper.timestamp).toLocaleDateString()
       );
 
-      await channel.send({ embeds: [oneHundredEmbed] });
-      await message.delete();
+      await interaction.editReply({ embeds: [oneHundredEmbed] });
     } catch (err) {
       errorHandler("100 command", err);
     }

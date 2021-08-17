@@ -1,8 +1,10 @@
-import { Message } from "discord.js";
+import {
+  SlashCommandBuilder,
+  SlashCommandSubcommandsOnlyBuilder,
+} from "@discordjs/builders";
+import { CommandInteraction } from "discord.js";
 
 export interface CommandInt {
-  name: string;
-  desc: string;
-  hidden?: boolean;
-  run: (message: Message) => Promise<void>;
+  data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder;
+  run: (interaction: CommandInteraction) => Promise<void>;
 }

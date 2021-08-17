@@ -4,7 +4,7 @@ import { validateEnv } from "./utils/validateEnv";
 import { Client } from "discord.js";
 import { connectDatabase } from "./database/connectDatabase";
 import { onReady } from "./events/onReady";
-import { onMessage } from "./events/onMessage";
+import { onInteraction } from "./events/onInteraction";
 import { IntentOptions } from "./config/IntentOptions";
 
 (async () => {
@@ -22,9 +22,12 @@ import { IntentOptions } from "./config/IntentOptions";
 
   const BOT = new Client({ intents: IntentOptions });
 
-  BOT.on("ready", async () => await onReady());
+  BOT.on("ready", async () => await onReady(BOT));
 
-  BOT.on("messageCreate", async (message) => await onMessage(message, BOT));
+  BOT.on(
+    "interactionCreate",
+    async (interaction) => await onInteraction(interaction)
+  );
 
   await connectDatabase();
 
