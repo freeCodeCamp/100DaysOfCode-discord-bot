@@ -43,7 +43,7 @@
     ]
   },
   "dependencies": {
-    "@discordjs/builders": "0.5.0",
+    "@discordjs/builders": "0.6.0",
     "@discordjs/rest": "0.1.0-canary.0",
     "@sentry/integrations": "6.11.0",
     "@sentry/node": "6.11.0",
