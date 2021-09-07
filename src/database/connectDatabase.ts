@@ -4,10 +4,7 @@ import { logHandler } from "../utils/logHandler";
 
 export const connectDatabase = async (): Promise<void> => {
   try {
-    await connect(process.env.MONGO_URI as string, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await connect(process.env.MONGO_URI as string);
 
     logHandler.log("info", "Database connection successful.");
   } catch (error) {
