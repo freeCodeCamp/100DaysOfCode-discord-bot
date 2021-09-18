@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nhcarrigan/100-days-of-code-bot#readme",
   "engines": {
     "node": "16.9.0",
-    "npm": "7.23.0"
+    "npm": "7.24.0"
   },
   "devDependencies": {
     "@types/node": "16.6.1",
