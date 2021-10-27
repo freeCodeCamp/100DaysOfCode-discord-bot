@@ -13,8 +13,9 @@ export const onReady = async (BOT: Client): Promise<void> => {
 
     const commandData: {
       name: string;
-      description: string;
-      options: APIApplicationCommandOption[];
+      description?: string;
+      type?: number;
+      options?: APIApplicationCommandOption[];
     }[] = [];
 
     CommandList.forEach((command) => commandData.push(command.data.toJSON()));
