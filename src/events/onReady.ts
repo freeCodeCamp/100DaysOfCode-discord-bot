@@ -18,7 +18,16 @@ export const onReady = async (BOT: Client): Promise<void> => {
       options?: APIApplicationCommandOption[];
     }[] = [];
 
-    CommandList.forEach((command) => commandData.push(command.data.toJSON()));
+    CommandList.forEach((command) =>
+      commandData.push(
+        command.data.toJSON() as {
+          name: string;
+          description?: string;
+          type?: number;
+          options?: APIApplicationCommandOption[];
+        }
+      )
+    );
     await rest.put(
       Routes.applicationGuildCommands(
         BOT.user?.id || "missing token",
