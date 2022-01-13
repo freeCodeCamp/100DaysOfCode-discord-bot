@@ -45,6 +45,6 @@
     "docsify-cli": "4.4.3",
     "dotenv": "10.0.0",
     "mongoose": "6.1.6",
-    "winston": "3.3.3"
+    "winston": "3.4.0"
   }
 }
