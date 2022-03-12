@@ -42,7 +42,7 @@
     "@sentry/node": "6.16.1",
     "discord-api-types": "0.26.1",
     "discord.js": "13.6.0",
-    "docsify-cli": "4.4.3",
+    "docsify-cli": "4.4.4",
     "dotenv": "14.3.2",
     "mongoose": "6.2.5",
     "winston": "3.5.0"
