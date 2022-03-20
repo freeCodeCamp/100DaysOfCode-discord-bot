@@ -43,7 +43,7 @@
     "discord-api-types": "0.29.0",
     "discord.js": "13.6.0",
     "docsify-cli": "4.4.4",
-    "dotenv": "14.3.2",
+    "dotenv": "16.0.0",
     "mongoose": "6.2.7",
     "winston": "3.6.0"
   }
