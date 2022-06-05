@@ -22,11 +22,11 @@
   },
   "homepage": "https://github.com/nhcarrigan/100-days-of-code-bot#readme",
   "engines": {
-    "node": "16.15.0",
+    "node": "16.15.1",
     "npm": "8.11.0"
   },
   "devDependencies": {
-    "@types/node": "16.11.36",
+    "@types/node": "16.11.38",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
     "eslint": "8.16.0",
