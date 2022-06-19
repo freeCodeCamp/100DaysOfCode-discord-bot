@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@discordjs/builders": "0.13.0",
-    "@discordjs/rest": "0.4.1",
+    "@discordjs/rest": "0.5.0",
     "@sentry/integrations": "6.19.7",
     "@sentry/node": "6.19.7",
     "discord-api-types": "0.33.5",
