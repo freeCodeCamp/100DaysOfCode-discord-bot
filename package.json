@@ -40,7 +40,7 @@
     "@discordjs/rest": "0.4.1",
     "@sentry/integrations": "6.19.7",
     "@sentry/node": "6.19.7",
-    "discord-api-types": "0.33.5",
+    "discord-api-types": "0.34.0",
     "discord.js": "13.7.0",
     "docsify-cli": "4.4.4",
     "dotenv": "16.0.1",
