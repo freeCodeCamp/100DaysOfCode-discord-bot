@@ -44,7 +44,7 @@
     "discord.js": "13.7.0",
     "docsify-cli": "4.4.4",
     "dotenv": "16.0.1",
-    "mongoose": "6.2.10",
+    "mongoose": "6.4.0",
     "winston": "3.7.2"
   }
 }
